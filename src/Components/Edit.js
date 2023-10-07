@@ -18,14 +18,14 @@ function Edit(props) {
     return(
         <div className="container w-50 my-5">
             <form onSubmit={updateUser}>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Username"/>
+                <div className="mb-3">
+                    <label for="exampleFormControlInput1" className="form-label">Username</label>
+                    <input type="text" className="form-control" id="exampleFormControlInput1" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Username"/>
                 </div>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleFormControlInput1" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
+                <div className="mb-3">
+                    <label for="exampleFormControlInput2" className="form-label">Password</label>
+                    <input type="password" className="form-control" id="exampleFormControlInput2" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
                 </div>
                 <input type="submit" className="btn btn-primary form-control" value="Update"/>
             </form>

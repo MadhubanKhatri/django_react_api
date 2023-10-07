@@ -43,14 +43,14 @@ function Home(props){
         
         <div className="container w-50 my-5">
             <form onSubmit={handleSubmit}>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Username</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Username"/>
+            <div className="mb-3">
+                <label htmlFor="exampleFormControlInput1" className="form-label">Username</label>
+                <input type="text" className="form-control" id="exampleFormControlInput1" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Username"/>
             </div>
 
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleFormControlInput1" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
+            <div className="mb-3">
+                <label htmlFor="exampleFormControlInput2" className="form-label">Password</label>
+                <input type="password" className="form-control" id="exampleFormControlInput2" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
             </div>
             <input type="submit" className="btn btn-primary form-control" value="ADD"/>
             </form>
@@ -67,17 +67,17 @@ function Home(props){
 
                 {
                     users.map((user=>{
-                        return(<>
-                            <tr>
+                        return(
+                            <tr key={user.id}>
                                 <td>{user.id}</td>
                                 <td>{user.user_name}</td>
                                 <td>{user.password}</td>
                                 <td>
                                     <Link className="btn btn-sm btn-primary mx-3" to={`/edit/${user.id}`} state={{uname: user.user_name, pwd: user.password}}>Edit</Link>
-                                    <Link className="btn btn-sm btn-danger" onClick={()=>deleteUser(user.id)}>Delete</Link>
+                                    <button className="btn btn-sm btn-danger" onClick={()=>deleteUser(user.id)}>Delete</button>
                                 </td>
                             </tr>
-                        </>)
+                        )
                     }))
                 }
                 </tbody>

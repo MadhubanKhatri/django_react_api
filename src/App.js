@@ -1,11 +1,10 @@
 import './App.css';
-import axios from 'axios';
-import {useEffect, useState} from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import Home from './Components/Home';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Edit from './Components/Edit';
+import FileUpload from './Components/FileUpload';
 import Root from './Components/Root';
 
 function App() {
@@ -17,6 +16,7 @@ function App() {
       <Route path="/about"  element={<About/>}/>
       <Route path="/contact"  element={<Contact/>}/>
       <Route path="/edit/:id/"  element={<Edit url={url}/>}/>
+      <Route path="/file_upload/"  element={<FileUpload url={url}/>}/>
     </Route>
   ))
   
